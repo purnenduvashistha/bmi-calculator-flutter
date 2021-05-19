@@ -56,34 +56,28 @@ class _InputPageState extends State<InputPage> {
               child: Row(
             children: [
               Expanded(
-                child: GestureDetector(
-                  onTap: () {
+                child: ReusableCard(
+                  onPress: () {
                     setState(() {
-                      //updateColor(EnumGender.Male);
                       selectedGender = EnumGender.Male;
                     });
                   },
-                  child: ReusableCard(
-                    colour: selectedGender==EnumGender.Male ? activeCardColor : inactiveCardColor, //Ternary Operator
-                    cardChild: IconContent(
-                      icon: FontAwesomeIcons.mars,
-                      label: 'MALE',
-                    ),
+                  colour: selectedGender==EnumGender.Male ? activeCardColor : inactiveCardColor, //Ternary Operator
+                  cardChild: IconContent(
+                    icon: FontAwesomeIcons.mars,
+                    label: 'MALE',
                   ),
                 ),
               ),
               Expanded(
-                child: GestureDetector(
-                  onTap: () {
+                child: ReusableCard(
+                  onPress: () {
                     setState(() {
-                      //updateColor(EnumGender.Female);
                       selectedGender = EnumGender.Female;
                     });
                   },
-                  child: ReusableCard(
-                    colour: selectedGender==EnumGender.Female ? activeCardColor : inactiveCardColor,
-                    cardChild: IconContent(icon: FontAwesomeIcons.venus, label: 'FEMALE',),
-                  ),
+                  colour: selectedGender==EnumGender.Female ? activeCardColor : inactiveCardColor,
+                  cardChild: IconContent(icon: FontAwesomeIcons.venus, label: 'FEMALE',),
                 ),
               ),
             ],
